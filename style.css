@@ -20,3 +20,29 @@
     background-position: center 20%;
     background-size: cover;
 }
+
+.cardsBox {
+    background-color: green;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cards {
+    background-color: white;
+    width: 280px;
+    height: 800px;
+    border-radius: 10px;
+    margin: 20px 150px 100px 150px;
+}
+
+.cards>img {
+    width: 240px;
+    height: 450px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.details {
+    padding: 0px 20px 20px 20px;
+}

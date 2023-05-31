@@ -1,5 +1,5 @@
 * {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Archivo', sans-serif;
 }
 
 .title {
@@ -20,27 +20,34 @@
     background-position: center 20%;
     background-size: cover;
 }
+.searchBox>input {
+    height: 22px;
+    font-size: 15px;
+}
 
+.searchBox>button {
+    height: 30px;
+    font-size: 15px;
+}
 .cardsBox {
-    background-color: green;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .cards {
-    background-color: white;
-    width: 280px;
+    box-shadow: 0px 0px 8px gray;
+    width: 300px;
     height: 800px;
     border-radius: 10px;
     margin: 20px 150px 100px 150px;
 }
 
 .cards>img {
-    width: 240px;
+    width: 260px;
     height: 450px;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 30px;
+    padding: 20px 20px 20px 20px;
 }
 
 .details {

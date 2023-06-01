@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const data = await getData();
-    posting(data);
+    const get = await getData();
+    posting(get);
 });
 
 async function getData() {
@@ -14,29 +14,28 @@ async function getData() {
 
     const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
     const data = await response.json();
-    const value = data['results'];
-    return value;
+    const source= data['results'];
+    return source;
 };
 
-function posting(value) {
+function posting(source) {
     const cardsBox = document.querySelector('.cardsBox');
     cardsBox.innerHTML = '';
-    value.forEach((a) => {
+    source.forEach((a) => {
         let originalTitle = a['original_title']
         let overView = a['overview']
         let voteAverage = a['vote_average']
         let posterPath = a['poster_path']
+        let id = a['id']
         posterPath = 'https://image.tmdb.org/t/p/w300' + posterPath;
-        tempHTML = `<div class="cardsBox">
-                        <div class="cards">
-                            <img src="${posterPath}">
-                            <div class="details">
-                                <h3>${originalTitle}</h3>
-                                <p>${overView}</p>
-                                <p>Rating : ${voteAverage}</p>
-                            </div>
+        tempHTML = `<div class="cards" onclick="alert('영화 id: ${id}')">
+                        <img src="${posterPath}">
+                        <div class="details">
+                            <h3>${originalTitle}</h3>
+                            <p>${overView}</p>
+                            <p>Rating : ${voteAverage}</p>
                         </div>
-                    </div>`;
+                    </div>`
         cardsBox.innerHTML += tempHTML;
     })
 }

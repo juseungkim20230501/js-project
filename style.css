@@ -48,6 +48,10 @@
     margin: 20px 150px 100px 150px;
 }
 
+.cards:hover {
+    cursor: pointer;
+}
+
 .cards>img {
     width: 260px;
     height: 390px;
